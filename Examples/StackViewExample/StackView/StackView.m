@@ -1,7 +1,7 @@
 //
 //  StackView.m
 //
-//  Version 1.0
+//  Version 1.0.1
 //
 //  Created by Nick Lockwood on 18/02/2012.
 //  Copyright (c) 2012 Charcoal Design. All rights reserved.
@@ -50,16 +50,22 @@
     return NO;
 }
 
+- (void)didMoveToSuperview
+{
+    [super didMoveToSuperview];
+    [self layoutIfNeeded];
+}
+
 - (void)setContentSpacing:(CGFloat)contentSpacing
 {
     _contentSpacing = contentSpacing;
-    [self layoutSubviews];
+    [self setNeedsLayout];
 }
 
 - (void)setMaxHeight:(CGFloat)maxHeight
 {
     _maxHeight = maxHeight;
-    [self layoutSubviews];
+    [self setNeedsLayout];
 }
 
 - (void)layoutSubviews
@@ -117,12 +123,6 @@
     result.width += inset.left + inset.right;
     result.height = MIN(_maxHeight ?: INFINITY, MAX(0.0f, result.height - _contentSpacing + inset.top + inset.bottom)) ;
     return result;
-}
-
-- (void)sizeToFit
-{
-    [super sizeToFit];
-    [self layoutSubviews];
 }
 
 @end

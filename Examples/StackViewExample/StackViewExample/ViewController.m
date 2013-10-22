@@ -10,6 +10,18 @@
 #import "StackView.h"
 
 
+@interface ViewController ()
+
+@property (nonatomic, weak) IBOutlet StackView *stackView;
+
+@end
+
+
 @implementation ViewController
+
+- (IBAction)sliderAction:(UISlider *)sender
+{
+    self.stackView.contentSpacing = sender.value;
+}
 
 @end
