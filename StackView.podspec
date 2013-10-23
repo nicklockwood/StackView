@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name         = "StackView"
   s.version      = "1.0.2"
   s.summary      = "A class designed to simplify the implementation of vertical stacks of views on iOS."
-  s.homepage     = "https://github.com/nicklockwood/SwipeView"
+  s.homepage     = "https://github.com/nicklockwood/StackView"
   s.license      = { :type => 'zlib', :file => 'LICENCE.md' }
   s.author       = { "Nick Lockwood" => "support@charcoaldesign.co.uk" }
   s.source       = { :git => "https://github.com/nicklockwood/StackView.git", :tag => "1.0.2" }
