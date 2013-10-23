@@ -19,6 +19,17 @@
 
 @implementation ViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    //inset content from edge
+    self.stackView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    
+    //set spacing between items
+    self.stackView.contentSpacing = 10;
+}
+
 - (IBAction)sliderAction:(UISlider *)sender
 {
     self.stackView.contentSpacing = sender.value;

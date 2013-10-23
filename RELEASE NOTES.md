@@ -1,3 +1,9 @@
+Version 1.0.3
+
+- Layout code is now DRY
+- Fixed some edge cases with nested StackViews
+- Improved documentation & example project
+
 Version 1.0.2
 
 - Added code to force layout when StackView is resized

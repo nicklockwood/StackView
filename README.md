@@ -43,7 +43,7 @@ StackView has the following properties:
 
 	@property (nonatomic, assign) CGFloat contentSpacing;
 	
-This is the spacing (in points) to apply between views in the StackView.
+This is the spacing (in points) to apply between views in the StackView. You can set this either with code or by using the User Defined Runtime Attributes in Interface Builder.
 	
     @property (nonatomic, assign) CGFloat maxHeight;
 
@@ -53,6 +53,14 @@ The maximum height (in points) that the StackView will grow to when you call -si
 Tips
 ---------------
 
-StackView will automatically call sizeToFit on all of its subviews. This measn that labels, buttons, etc will typically be stretched to the full width of the StackView, and images will be set to their natural size.
+1.  StackView inherits various useful properties from UIScrollView, including `contentInset`, which lets you inset the StackView subviews from the edge.
 
-If you don't want this to happen, simply embed your views inside another UIView and StackView will only resize the outer view (see how this is handled with the UIButton in the example project).
+2.  StackView will automatically call sizeToFit on all of its subviews. This means that labels, buttons, etc will typically be stretched to the full width of the StackView, and images will be set to their natural size.
+
+    If you don't want this to happen, simply embed your views inside another UIView and StackView will only resize the outer view (see how this is handled with the UIButton in the example project).
+    
+3.  If you require variable spacing between your StackView items, you can insert a blank view of height 0 to double the `contentSpacing` between two consectuvie views, or of height `N` to create a gap of `contentSpacing * 2 + N.
+
+4.  You can nest StackViews, which is useful if you want to create hierarchical structures, or have groups of views with different `contentSpacing` values.`
+
+5.  If you use a UIScrollView and set its class to StackView in Interface Builder (instead of starting with a plain UIView) then Interface Builder will let you configure properties such as contentInset and scrollbar appearance.

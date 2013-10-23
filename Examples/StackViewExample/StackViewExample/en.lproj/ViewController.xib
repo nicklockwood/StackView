@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12F45</string>
+		<string key="IBDocument.SystemVersion">13A603</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.40</string>
-		<string key="IBDocument.HIToolboxVersion">626.00</string>
+		<string key="IBDocument.AppKitVersion">1265</string>
+		<string key="IBDocument.HIToolboxVersion">695.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -45,7 +45,7 @@
 							<object class="IBUILabel" id="501558237">
 								<reference key="NSNextResponder" ref="235309287"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{25, 57}, {1700, 21}}</string>
+								<string key="NSFrame">{{25, 40}, {1700, 21}}</string>
 								<reference key="NSSuperview" ref="235309287"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="882209496"/>
@@ -79,7 +79,7 @@
 							<object class="IBUIImageView" id="882209496">
 								<reference key="NSNextResponder" ref="235309287"/>
 								<int key="NSvFlags">256</int>
-								<string key="NSFrame">{{52, 98}, {175, 131}}</string>
+								<string key="NSFrame">{{52, 81}, {175, 131}}</string>
 								<reference key="NSSuperview" ref="235309287"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="279340762"/>
@@ -96,7 +96,7 @@
 							<object class="IBUILabel" id="279340762">
 								<reference key="NSNextResponder" ref="235309287"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{-710, 251}, {1700, 21}}</string>
+								<string key="NSFrame">{{-710, 234}, {1700, 21}}</string>
 								<reference key="NSSuperview" ref="235309287"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="274441313"/>
@@ -157,7 +157,7 @@
 										</object>
 									</object>
 								</array>
-								<string key="NSFrame">{{20, 291}, {176, 77}}</string>
+								<string key="NSFrame">{{20, 274}, {176, 77}}</string>
 								<reference key="NSSuperview" ref="235309287"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="371113797"/>
@@ -174,7 +174,7 @@
 							<object class="IBUISlider" id="412839138">
 								<reference key="NSNextResponder" ref="235309287"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{50, 379}, {118, 23}}</string>
+								<string key="NSFrame">{{50, 362}, {118, 23}}</string>
 								<reference key="NSSuperview" ref="235309287"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="505914953"/>
@@ -188,7 +188,7 @@
 							<object class="IBUILabel" id="505914953">
 								<reference key="NSNextResponder" ref="235309287"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{-710, 411}, {1700, 21}}</string>
+								<string key="NSFrame">{{-710, 394}, {1700, 21}}</string>
 								<reference key="NSSuperview" ref="235309287"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="447418574"/>
@@ -209,7 +209,7 @@
 								<double key="preferredMaxLayoutWidth">1700</double>
 							</object>
 						</array>
-						<string key="NSFrame">{{20, 20}, {280, 464}}</string>
+						<string key="NSFrame">{{20, 37}, {280, 447}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="501558237"/>
@@ -225,7 +225,7 @@
 					<object class="IBUISlider" id="3901332">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">266</int>
-						<string key="NSFrame">{{107, 506}, {195, 23}}</string>
+						<string key="NSFrame">{{111, 506}, {191, 23}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -239,7 +239,7 @@
 					<object class="IBUILabel" id="447418574">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{20, 506}, {62, 21}}</string>
+						<string key="NSFrame">{{20, 506}, {80, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="3901332"/>
@@ -425,20 +425,7 @@
 				<string key="24.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.CustomClassName">StackView</string>
-				<object class="NSMutableDictionary" key="8.IBAttributePlaceholdersKey">
-					<string key="NS.key.0">IBUserDefinedRuntimeAttributesPlaceholderName</string>
-					<object class="IBUIUserDefinedRuntimeAttributesPlaceholder" key="NS.object.0">
-						<string key="name">IBUserDefinedRuntimeAttributesPlaceholderName</string>
-						<reference key="object" ref="235309287"/>
-						<array key="userDefinedRuntimeAttributes">
-							<object class="IBUserDefinedRuntimeAttribute">
-								<string key="typeIdentifier">com.apple.InterfaceBuilder.userDefinedRuntimeAttributeType.number</string>
-								<string key="keyPath">contentSpacing</string>
-								<integer value="10" key="value"/>
-							</object>
-						</array>
-					</object>
-				</object>
+				<dictionary class="NSMutableDictionary" key="8.IBAttributePlaceholdersKey"/>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
@@ -460,17 +447,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">ViewController</string>
 					<string key="superclassName">UIViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">sliderAction:</string>
-						<string key="NS.object.0">UISlider</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">sliderAction:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">sliderAction:</string>
-							<string key="candidateClassName">UISlider</string>
-						</object>
-					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">stackView</string>
 						<string key="NS.object.0">StackView</string>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01174B4518189126005EE93F /* StackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01174B4418189126005EE93F /* StackView.m */; };
 		01C376C21816CE2300837E36 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C376C11816CE2300837E36 /* UIKit.framework */; };
 		01C376C41816CE2300837E36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C376C31816CE2300837E36 /* Foundation.framework */; };
 		01C376C61816CE2300837E36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C376C51816CE2300837E36 /* CoreGraphics.framework */; };
@@ -19,11 +20,12 @@
 		01C376DB1816CE2300837E36 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C376DA1816CE2300837E36 /* ViewController.m */; };
 		01C376DE1816CE2300837E36 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C376DC1816CE2300837E36 /* ViewController.xib */; };
 		01C376E51816D12700837E36 /* all-the-things@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01C376E41816D12700837E36 /* all-the-things@2x.jpg */; };
-		01C376E91816D17200837E36 /* StackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C376E81816D17200837E36 /* StackView.m */; };
 		01C376EB1816D2CC00837E36 /* all-the-things.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01C376EA1816D2CC00837E36 /* all-the-things.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01174B4318189126005EE93F /* StackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackView.h; sourceTree = "<group>"; };
+		01174B4418189126005EE93F /* StackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackView.m; sourceTree = "<group>"; };
 		01C376BE1816CE2300837E36 /* StackViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C376C11816CE2300837E36 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		01C376C31816CE2300837E36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -41,8 +43,6 @@
 		01C376DA1816CE2300837E36 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		01C376DD1816CE2300837E36 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		01C376E41816D12700837E36 /* all-the-things@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "all-the-things@2x.jpg"; sourceTree = "<group>"; };
-		01C376E71816D17200837E36 /* StackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackView.h; sourceTree = "<group>"; };
-		01C376E81816D17200837E36 /* StackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackView.m; sourceTree = "<group>"; };
 		01C376EA1816D2CC00837E36 /* all-the-things.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "all-the-things.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,10 +60,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01174B4218189126005EE93F /* StackView */ = {
+			isa = PBXGroup;
+			children = (
+				01174B4318189126005EE93F /* StackView.h */,
+				01174B4418189126005EE93F /* StackView.m */,
+			);
+			name = StackView;
+			path = ../../StackView;
+			sourceTree = "<group>";
+		};
 		01C376B51816CE2300837E36 = {
 			isa = PBXGroup;
 			children = (
-				01C376E61816D17200837E36 /* StackView */,
+				01174B4218189126005EE93F /* StackView */,
 				01C376C71816CE2300837E36 /* StackViewExample */,
 				01C376C01816CE2300837E36 /* Frameworks */,
 				01C376BF1816CE2300837E36 /* Products */,
@@ -115,15 +125,6 @@
 				01C376D71816CE2300837E36 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		01C376E61816D17200837E36 /* StackView */ = {
-			isa = PBXGroup;
-			children = (
-				01C376E71816D17200837E36 /* StackView.h */,
-				01C376E81816D17200837E36 /* StackView.m */,
-			);
-			path = StackView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +198,7 @@
 				01C376CE1816CE2300837E36 /* main.m in Sources */,
 				01C376D21816CE2300837E36 /* AppDelegate.m in Sources */,
 				01C376DB1816CE2300837E36 /* ViewController.m in Sources */,
-				01C376E91816D17200837E36 /* StackView.m in Sources */,
+				01174B4518189126005EE93F /* StackView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

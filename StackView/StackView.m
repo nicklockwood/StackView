@@ -1,7 +1,7 @@
 //
 //  StackView.m
 //
-//  Version 1.0.2
+//  Version 1.0.3
 //
 //  Created by Nick Lockwood on 18/02/2012.
 //  Copyright (c) 2012 Charcoal Design. All rights reserved.
@@ -50,12 +50,6 @@
     return NO;
 }
 
-- (void)didMoveToSuperview
-{
-    [super didMoveToSuperview];
-    [self layoutIfNeeded];
-}
-
 - (void)setContentSpacing:(CGFloat)contentSpacing
 {
     _contentSpacing = contentSpacing;
@@ -71,33 +65,10 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
-    UIEdgeInsets inset = self.contentInset;
-    CGSize size = self.bounds.size;
-    size.width -= (inset.left + inset.right);
-    size.height -= (inset.top + inset.bottom);
-    
-    CGFloat y = 0.0f;
-    for (UIView *view in self.subviews)
-    {
-        view.autoresizingMask = UIViewAutoresizingNone;
-        if (![self viewIsScrollbar:view] && !view.hidden)
-        {
-            CGSize _size = view.frame.size;
-            if (self.autoresizesSubviews)
-            {
-                _size = [view sizeThatFits:view.frame.size];
-                _size.width = size.width;
-            }
-            view.frame = CGRectMake(0, y, _size.width, _size.height);
-            y += _size.height + _contentSpacing;
-        }
-    }
-    
-    self.contentSize = CGSizeMake(size.width, MAX(0.0f, y - _contentSpacing));
+    [self calculateContentSizeThatFits:self.frame.size andUpdateLayout:YES];
 }
 
-- (CGSize)sizeThatFits:(CGSize)size
+- (CGSize)calculateContentSizeThatFits:(CGSize)size andUpdateLayout:(BOOL)update
 {
     UIEdgeInsets inset = self.contentInset;
     size.width -= (inset.left + inset.right);
@@ -112,23 +83,24 @@
             CGSize _size = view.frame.size;
             if (self.autoresizesSubviews)
             {
-                _size = [view sizeThatFits:view.frame.size];
+                _size = [view sizeThatFits:size];
                 _size.width = size.width;
             }
+            if (update) view.frame = CGRectMake(0, result.height, _size.width, _size.height);
             result.height += _size.height + _contentSpacing;
             result.width = MAX(result.width, _size.width);
         }
     }
     
+    if (update) self.contentSize = result;
     result.width += inset.left + inset.right;
-    result.height = MIN(_maxHeight ?: INFINITY, MAX(0.0f, result.height - _contentSpacing + inset.top + inset.bottom)) ;
+    result.height = MIN(_maxHeight ?: INFINITY, MAX(0.0f, result.height - _contentSpacing + inset.top + inset.bottom));
     return result;
 }
 
-- (void)sizeToFit
+- (CGSize)sizeThatFits:(CGSize)size
 {
-    [super sizeToFit];
-    [self layoutIfNeeded];
+    return [self calculateContentSizeThatFits:size andUpdateLayout:NO];
 }
 
 @end
