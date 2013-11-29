@@ -1,3 +1,9 @@
+Version 1.0.4
+
+- Removed erronious bottom padding
+- Now updates layout when sizeToFit is called
+- Now compliant with -Weverything warning level
+
 Version 1.0.3
 
 - Layout code is now DRY

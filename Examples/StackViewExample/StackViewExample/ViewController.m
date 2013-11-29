@@ -12,7 +12,7 @@
 
 @interface ViewController ()
 
-@property (nonatomic, weak) IBOutlet StackView *stackView;
+@property (nonatomic, strong) IBOutlet StackView *stackView;
 
 @end
 

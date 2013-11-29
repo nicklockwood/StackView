@@ -1,7 +1,7 @@
 //
 //  StackView.m
 //
-//  Version 1.0.3
+//  Version 1.0.4
 //
 //  Created by Nick Lockwood on 18/02/2012.
 //  Copyright (c) 2012 Charcoal Design. All rights reserved.
@@ -31,6 +31,11 @@
 //
 
 
+#pragma GCC diagnostic ignored "-Wobjc-missing-property-synthesis"
+#pragma GCC diagnostic ignored "-Wdirect-ivar-access"
+#pragma GCC diagnostic ignored "-Wgnu"
+
+
 #import "StackView.h"
 
 
@@ -38,11 +43,11 @@
 
 - (BOOL)viewIsScrollbar:(UIView *)view
 {
-    CGFloat scrollbarSize = ([[UIDevice currentDevice].systemVersion floatValue] >= 7)? 3.5: 7;
+    CGFloat scrollbarSize = ([[UIDevice currentDevice].systemVersion floatValue] >= 7)? 3.5: 7.0;
     if ([view isKindOfClass:[UIImageView class]])
     {
         CGRect frame = view.frame;
-        if (frame.size.width == scrollbarSize || frame.size.height == scrollbarSize)
+        if (ABS(frame.size.width - scrollbarSize) < 0.001 || ABS(frame.size.height - scrollbarSize) < 0.001)
         {
             return YES;
         }
@@ -92,15 +97,23 @@
         }
     }
     
+    result.height -= _contentSpacing;
     if (update) self.contentSize = result;
     result.width += inset.left + inset.right;
-    result.height = MIN(_maxHeight ?: INFINITY, MAX(0.0f, result.height - _contentSpacing + inset.top + inset.bottom));
+    result.height = MIN(_maxHeight ?: INFINITY, MAX(0.0f, result.height + inset.top + inset.bottom));
     return result;
 }
 
 - (CGSize)sizeThatFits:(CGSize)size
 {
     return [self calculateContentSizeThatFits:size andUpdateLayout:NO];
+}
+
+- (void)sizeToFit
+{
+    CGRect frame = self.frame;
+    frame.size = [self calculateContentSizeThatFits:frame.size andUpdateLayout:YES];
+    self.frame = frame;
 }
 
 @end

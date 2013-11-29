@@ -1,7 +1,7 @@
 //
 //  StackView.h
 //
-//  Version 1.0.3
+//  Version 1.0.4 beta
 //
 //  Created by Nick Lockwood on 18/02/2012.
 //  Copyright (c) 2012 Charcoal Design. All rights reserved.
@@ -31,7 +31,12 @@
 //
 
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wobjc-missing-property-synthesis"
+
+
 #import <UIKit/UIKit.h>
+
 
 @interface StackView : UIScrollView
 
@@ -39,3 +44,6 @@
 @property (nonatomic, assign) CGFloat maxHeight;
 
 @end
+
+
+#pragma GCC diagnostic pop

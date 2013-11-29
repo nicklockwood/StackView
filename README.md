@@ -59,7 +59,7 @@ Tips
 
     If you don't want this to happen, simply embed your views inside another UIView and StackView will only resize the outer view (see how this is handled with the UIButton in the example project).
     
-3.  If you require variable spacing between your StackView items, you can insert a blank view of height 0 to double the `contentSpacing` between two consectuvie views, or of height `N` to create a gap of `contentSpacing * 2 + N.
+3.  If you require variable spacing between your StackView items, you can insert a blank view of height 0 to double the `contentSpacing` between two consecutive views, or of height `N` to create a gap of `contentSpacing * 2 + N`.
 
 4.  You can nest StackViews, which is useful if you want to create hierarchical structures, or have groups of views with different `contentSpacing` values.`
 
