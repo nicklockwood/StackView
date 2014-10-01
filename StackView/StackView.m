@@ -1,7 +1,7 @@
 //
 //  StackView.m
 //
-//  Version 1.0.4
+//  Version 1.0.5
 //
 //  Created by Nick Lockwood on 18/02/2012.
 //  Copyright (c) 2012 Charcoal Design. All rights reserved.
@@ -43,11 +43,16 @@
 
 - (BOOL)viewIsScrollbar:(UIView *)view
 {
-    CGFloat scrollbarSize = ([[UIDevice currentDevice].systemVersion floatValue] >= 7)? 3.5: 7.0;
     if ([view isKindOfClass:[UIImageView class]])
     {
         CGRect frame = view.frame;
-        if (ABS(frame.size.width - scrollbarSize) < 0.001 || ABS(frame.size.height - scrollbarSize) < 0.001)
+        //iOS versions < 7.0 use 7.0 pts for the scrollbar width, as does iPhone 6 plus
+        if (ABS(frame.size.width - 7.0) < 0.001 || ABS(frame.size.height - 7.0) < 0.001)
+        {
+            return YES;
+        }
+        //iOS versions >= 7.0 use 3.5 pts for the scrollbar width, apart from iPhone 6 plus
+        if (ABS(frame.size.width - 3.5) < 0.001 || ABS(frame.size.height - 3.5) < 0.001)
         {
             return YES;
         }

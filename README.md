@@ -11,7 +11,7 @@ StackView automatically handles view resizing (e.g. in the case of a screen rota
 Supported OS & SDK Versions
 -----------------------------
 
-* Supported build target - iOS 7.0 (Xcode 5.0, Apple LLVM compiler 5.0)
+* Supported build target - iOS 8.0 (Xcode 6.0, Apple LLVM compiler 6.0)
 * Earliest supported deployment target - iOS 5.0
 * Earliest compatible deployment target - iOS 4.3
 
@@ -64,3 +64,36 @@ Tips
 4.  You can nest StackViews, which is useful if you want to create hierarchical structures, or have groups of views with different `contentSpacing` values.`
 
 5.  If you use a UIScrollView and set its class to StackView in Interface Builder (instead of starting with a plain UIView) then Interface Builder will let you configure properties such as contentInset and scrollbar appearance.
+
+
+Release notes
+----------------
+
+Version 1.0.5
+
+- Fixed extra bottom padding on iPhone 6 plus
+
+Version 1.0.4
+
+- Removed erronious bottom padding
+- Now updates layout when sizeToFit is called
+- Now compliant with -Weverything warning level
+
+Version 1.0.3
+
+- Layout code is now DRY
+- Fixed some edge cases with nested StackViews
+- Improved documentation & example project
+
+Version 1.0.2
+
+- Added code to force layout when StackView is resized
+
+Version 1.0.1
+
+- Removed some redundant layout methods
+- Improved the example project
+
+Version 1.0
+
+- First release

@@ -1,6 +1,6 @@
 StackView
 
-Version 1.0.4, November 29th, 2013
+Version 1.0.5, October 1st, 2014
 
 Copyright (C) 2012 Charcoal Design
 
