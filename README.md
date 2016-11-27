@@ -11,7 +11,7 @@ StackView automatically handles view resizing (e.g. in the case of a screen rota
 Supported OS & SDK Versions
 -----------------------------
 
-* Supported build target - iOS 8.0 (Xcode 6.0, Apple LLVM compiler 6.0)
+* Supported build target - iOS 10.1 (Xcode 8.1, Apple LLVM compiler 8.0)
 * Earliest supported deployment target - iOS 5.0
 * Earliest compatible deployment target - iOS 4.3
 
@@ -68,6 +68,10 @@ Tips
 
 Release notes
 ----------------
+
+Version 1.0.6
+
+- Fixed issue with scrollbars on some devices
 
 Version 1.0.5
 

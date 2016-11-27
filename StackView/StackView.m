@@ -1,7 +1,7 @@
 //
 //  StackView.m
 //
-//  Version 1.0.5
+//  Version 1.0.6
 //
 //  Created by Nick Lockwood on 18/02/2012.
 //  Copyright (c) 2012 Charcoal Design. All rights reserved.
@@ -31,9 +31,11 @@
 //
 
 
-#pragma GCC diagnostic ignored "-Wobjc-missing-property-synthesis"
-#pragma GCC diagnostic ignored "-Wdirect-ivar-access"
-#pragma GCC diagnostic ignored "-Wgnu"
+#pragma clang diagnostic ignored "-Wobjc-missing-property-synthesis"
+#pragma clang diagnostic ignored "-Wdirect-ivar-access"
+#pragma clang diagnostic ignored "-Wfloat-conversion"
+#pragma clang diagnostic ignored "-Wdouble-promotion"
+#pragma clang diagnostic ignored "-Wgnu"
 
 
 #import "StackView.h"
@@ -45,17 +47,7 @@
 {
     if ([view isKindOfClass:[UIImageView class]])
     {
-        CGRect frame = view.frame;
-        //iOS versions < 7.0 use 7.0 pts for the scrollbar width, as does iPhone 6 plus
-        if (ABS(frame.size.width - 7.0) < 0.001 || ABS(frame.size.height - 7.0) < 0.001)
-        {
-            return YES;
-        }
-        //iOS versions >= 7.0 use 3.5 pts for the scrollbar width, apart from iPhone 6 plus
-        if (ABS(frame.size.width - 3.5) < 0.001 || ABS(frame.size.height - 3.5) < 0.001)
-        {
-            return YES;
-        }
+        return view.frame.size.width < 7.001 || view.frame.size.height < 7.001;
     }
     return NO;
 }

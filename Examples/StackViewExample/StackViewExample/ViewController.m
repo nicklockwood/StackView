@@ -32,7 +32,7 @@
 
 - (IBAction)sliderAction:(UISlider *)sender
 {
-    self.stackView.contentSpacing = sender.value;
+    self.stackView.contentSpacing = (CGFloat)sender.value;
 }
 
 @end

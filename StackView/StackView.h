@@ -1,7 +1,7 @@
 //
 //  StackView.h
 //
-//  Version 1.0.5
+//  Version 1.0.6
 //
 //  Created by Nick Lockwood on 18/02/2012.
 //  Copyright (c) 2012 Charcoal Design. All rights reserved.
